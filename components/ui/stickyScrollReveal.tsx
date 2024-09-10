@@ -41,14 +41,14 @@ export const StickyScroll = ({
     });
 
     const backgroundColors = [
-        "var(--slate-900)",
-        "var(--black)",
-        "var(--neutral-900)",
+        "rgba(15, 23, 42, 0.5)", // var(--slate-900) with 50% opacity
+        "rgba(0, 0, 0, 0.5)", // var(--black) with 50% opacity
+        "rgba(38, 38, 38, 0.5)", // var(--neutral-900) with 50% opacity
     ];
     const linearGradients = [
-        "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
-        "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
-        "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
+        "linear-gradient(to bottom right, rgba(6, 182, 212, 0.8), rgba(16, 185, 129, 0.8))", // var(--cyan-500) and var(--emerald-500) with 80% opacity
+        "linear-gradient(to bottom right, rgba(236, 72, 153, 0.8), rgba(79, 70, 229, 0.8))", // var(--pink-500) and var(--indigo-500) with 80% opacity
+        "linear-gradient(to bottom right, rgba(249, 115, 22, 0.8), rgba(234, 179, 8, 0.8))", // var(--orange-500) and var(--yellow-500) with 80% opacity
     ];
 
     const [backgroundGradient, setBackgroundGradient] = useState(
@@ -59,12 +59,25 @@ export const StickyScroll = ({
         setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
     }, [activeCard]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (ref.current) {
+                ref.current.scrollBy({
+                    top: 2, // Increase the scroll speed
+                    behavior: "smooth",
+                });
+            }
+        }, 25); // Adjust the interval time as needed
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <motion.div
             animate={{
                 backgroundColor: backgroundColors[activeCard % backgroundColors.length],
             }}
-            className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+            className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-[40px] p-10 scrollbar-hide"
             ref={ref}
         >
             <div className="div relative flex items-start px-4">

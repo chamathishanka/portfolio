@@ -30,7 +30,7 @@ function MyWork() {
 
     return (
         <BackgroundGradientAnimation>
-            <div className="h-auto w-full flex flex-col items-center justify-center gap-4 p-4">
+            <div className="h-auto w-full flex flex-col items-center justify-center gap-4 p-4 pb-8">
                 <div className="flex-col mb-4">
                     <TypewriterEffectSmooth words={words} />
                 </div>

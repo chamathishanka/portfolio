@@ -20,6 +20,10 @@ const config: Config = {
           DEFAULT: "#000",
           100: "#000319",
         },
+        blue: {
+
+          900: "#07074B",
+        },
       },
       animation: {
         first: "moveVertical 30s ease infinite",
@@ -27,6 +31,7 @@ const config: Config = {
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
+        spotlight: "spotlight 2s ease .75s 1 forwards",
       },
       keyframes: {
         moveHorizontal: {
@@ -62,7 +67,20 @@ const config: Config = {
             transform: "translateY(-50%)",
           },
         },
+
+        spotlight: {
+          "0%": {
+            opacity: "0",
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
       },
+
+
     },
   },
   plugins: [
@@ -83,3 +101,6 @@ function addVariablesForColors({ addBase, theme }: any) {
 }
 
 export default config;
+
+
+

@@ -13,7 +13,7 @@ const words = [
 
 function blogs() {
     return (
-        <div className="flex flex-col items-center justify-center space-y-5">
+        <div className="flex flex-col items-center justify-center space-y-5 px-4">
             <div className="flex-col">
                 <TypewriterEffectSmooth words={words} />
             </div>

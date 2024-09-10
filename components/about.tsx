@@ -3,6 +3,7 @@ import React from "react";
 import { StickyScroll } from "./ui/stickyScrollReveal";
 import Image from "next/image";
 import { TypewriterEffectSmooth } from "./ui/typewriterEffect";
+import { BackgroundGradientAnimation } from "./ui/backgroundGradientAnimation";
 
 const words = [
     {
@@ -65,11 +66,13 @@ const content = [
 ];
 export function About() {
     return (
-        <div className="py-10 px-10 md:px-40">
-            <div className="flex justify-center items-center mt-0">
-                <TypewriterEffectSmooth words={words} />
+        <BackgroundGradientAnimation>
+            <div className="py-10 px-10 md:px-40">
+                <div className="flex justify-center items-center mt-0">
+                    <TypewriterEffectSmooth words={words} />
+                </div>
+                <StickyScroll content={content} />
             </div>
-            <StickyScroll content={content} />
-        </div>
+        </BackgroundGradientAnimation>
     );
 }
