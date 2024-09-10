@@ -47,7 +47,7 @@ export const MenuItem = ({
                             >
                                 <motion.div
                                     layout // layout ensures smooth animation
-                                    className="w-max h-full p-4"
+                                    className="w-max h-full p-2"
                                 >
                                     {children}
                                 </motion.div>
@@ -70,7 +70,7 @@ export const Menu = ({
     return (
         <nav
             onMouseLeave={() => setActive(null)} // resets the state
-            className="relative rounded-full border  dark:bg-black border-black bg-black shadow-input flex justify-center space-x-4 px-8 py-6 mt-4"
+            className="relative rounded-full border  dark:bg-black border-black bg-black shadow-input flex justify-center space-x-4 px-8 py-6 mt-2"
         >
             {children}
         </nav>
@@ -101,7 +101,7 @@ export const ProductItem = ({
                 <h4 className="text-xl font-bold mb-1 text-white">
                     {title}
                 </h4>
-                <p className="text-cyan-500 text-sm max-w-[10rem]text-neutral-300">
+                <p className="text-text-blue-600 text-sm max-w-[10rem]text-neutral-300">
                     {description}
                 </p>
             </div>
