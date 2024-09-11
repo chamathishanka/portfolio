@@ -3,7 +3,6 @@ import Blogs from "@/components/blogs";
 import MyWork from "@/components/myWork";
 import { NavbarDemo } from "@/components/navbar";
 import { Skills } from "@/components/skills";
-import { AboutMe } from "@/components/aboutMe";
 import { About } from "@/components/about";
 import Footer from "@/components/footer";
 

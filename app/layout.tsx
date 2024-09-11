@@ -17,6 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          href="https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/mypro.png?alt=media"
+          type="image/png"
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
