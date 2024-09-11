@@ -52,7 +52,7 @@ const Hero = () => {
                     transition={{ duration: 6, ease: "easeInOut" }}
                 >
                     <div className="relative z-10">
-                        <Image src="/weeknd.jpg" alt="Weeknd" width={192 * 1.5} height={108 * 1.5} className="object-cover" />
+                        <Image src="/mypro.png" alt="Chamath Ishanka" width={192 * 1.5} height={108 * 1.5} className="object-cover" />
                     </div>
                     <TypewriterEffectSmooth words={words} />
                     <p className="text-gray-600 dark:text-gray-400 text-1xl md:text-2xl">

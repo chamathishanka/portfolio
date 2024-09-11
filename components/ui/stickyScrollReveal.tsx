@@ -63,11 +63,11 @@ export const StickyScroll = ({
         const interval = setInterval(() => {
             if (ref.current) {
                 ref.current.scrollBy({
-                    top: 2, // Increase the scroll speed
+                    top: 1, // Increase the scroll speed
                     behavior: "smooth",
                 });
             }
-        }, 25); // Adjust the interval time as needed
+        }, 50); // Adjust the interval time as needed
 
         return () => clearInterval(interval);
     }, []);
