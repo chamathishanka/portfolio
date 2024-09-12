@@ -37,16 +37,17 @@ function MyWork() {
 
                 <div className="h-auto w-full flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                     <PinContainer
-                        title="/ui.aceternity.com"
-                        href="https://twitter.com/mannupaaji"
+                        title="/youtu.be/GuR3GZIov5c"
+                        href="https://youtu.be/GuR3GZIov5c"
                     >
                         <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-full sm:w-[22rem] h-[20rem]">
                             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
-                                Aceternity UI
+                                MEDICHIVE
                             </h3>
                             <div className="text-base !m-0 !p-0 font-normal">
                                 <span className="text-slate-500">
-                                    Customizable Tailwind CSS and Framer Motion Components.
+                                    Designed and developed the frontend and backend
+                                    of the doctors&apos; portal.
                                 </span>
                             </div>
                             <div className="flex flex-1 w-full rounded-lg mt-4 relative">
@@ -63,16 +64,16 @@ function MyWork() {
                     </PinContainer>
 
                     <PinContainer
-                        title="/ui.aceternity.com"
-                        href="https://twitter.com/mannupaaji"
+                        title="ongoing project"
+                        href=""
                     >
                         <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-full sm:w-[22rem] h-[20rem]">
                             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
-                                Aceternity UI
+                                UNICONN
                             </h3>
                             <div className="text-base !m-0 !p-0 font-normal">
                                 <span className="text-slate-500">
-                                    Customizable Tailwind CSS and Framer Motion Components.
+                                    I am currently working as a full-stack developer on this project.
                                 </span>
                             </div>
                             <div className="flex flex-1 w-full rounded-lg mt-4 relative">
@@ -89,16 +90,17 @@ function MyWork() {
                     </PinContainer>
 
                     <PinContainer
-                        title="/ui.aceternity.com"
-                        href="https://twitter.com/mannupaaji"
+                        title="/linkedin.com/posts/chamathishanka"
+                        href="https://www.linkedin.com/posts/chamathishanka_innovation-teamwork-exmo2023-activity-7239995737478959104-RqMC?utm_source=share&utm_medium=member_desktop"
                     >
                         <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-full sm:w-[22rem] h-[20rem]">
                             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
-                                Aceternity UI
+                                AUTOMATED BEVERAGE MIXER
                             </h3>
                             <div className="text-base !m-0 !p-0 font-normal">
                                 <span className="text-slate-500">
-                                    Customizable Tailwind CSS and Framer Motion Components.
+                                    Developed IoT functionalities and created 3D
+                                    animations and models for 3D printing.
                                 </span>
                             </div>
                             <div className="flex flex-1 w-full rounded-lg mt-4 relative">
