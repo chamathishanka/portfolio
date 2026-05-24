@@ -16,85 +16,85 @@ export const projects = [
         title: "ReactJS",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/react.png?alt=media"
+        icon: "/react.png"
     },
     {
         title: "NextJS",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/nextjs.png?alt=media"
+        icon: "/nextjs.png"
     },
     {
         title: "NestJS",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/nestjs.png?alt=media"
+        icon: "/nestjs.png"
     },
     {
         title: "NodeJS",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/nodejs.png?alt=media"
+        icon: "/nodejs.png"
     },
     {
         title: "TailwindCSS",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/tailwindcss.png?alt=media"
+        icon: "/tailwindcss.png"
     },
     {
         title: "Html",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/html.png?alt=media"
+        icon: "/html.png"
     },
     {
         title: "CSS",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/css.png?alt=media"
+        icon: "/css.png"
     },
     {
         title: "MySQL",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/mysql.png?alt=media"
+        icon: "/mysql.png"
     },
     {
         title: "Python",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/python.png?alt=media"
+        icon: "/python.png"
     },
     {
         title: "Java",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/java.png?alt=media"
+        icon: "/java.png"
     },
     {
         title: "Docker",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/docker.png?alt=media"
+        icon: "/docker.png"
     },
     {
         title: "GIT",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/git.png?alt=media"
+        icon: "/git.png"
     },
     {
         title: "Figma",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/figma.png?alt=media"
+        icon: "/figma.png"
     },
     {
         title: "GitHub",
         description: "",
         link: "#my-work",
-        icon: "https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/github.png?alt=media"
+        icon: "/github.png"
     }
 ];
 

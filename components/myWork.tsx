@@ -25,22 +25,22 @@ function MyWork() {
     }, []);
 
     if (!isClient) {
-        return null; // Render nothing on the server
+        return null;
     }
 
     return (
         <BackgroundGradientAnimation>
-            <div className="h-auto w-full flex flex-col items-center justify-center gap-4 p-4 pb-8">
+            <div className="h-auto w-full flex flex-col items-center justify-center gap-4 p-4 pb-16">
                 <div className="flex-col mb-4">
                     <TypewriterEffectSmooth words={words} />
                 </div>
 
-                <div className="h-auto w-full flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <div className="w-full flex flex-col items-center gap-36 md:flex-row md:flex-wrap md:justify-center md:items-start md:gap-10 px-4 py-6">
                     <PinContainer
                         title="/youtu.be/GuR3GZIov5c"
                         href="https://youtu.be/GuR3GZIov5c"
                     >
-                        <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-full sm:w-[22rem] h-[20rem]">
+                        <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-[17rem] sm:w-[22rem] h-[20rem]">
                             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
                                 MEDICHIVE
                             </h3>
@@ -52,10 +52,10 @@ function MyWork() {
                             </div>
                             <div className="flex flex-1 w-full rounded-lg mt-4 relative">
                                 <Image
-                                    src="/medichive.gif" // Path to the GIF in the public directory
+                                    src="/medichive.gif"
                                     alt="Medichive GIF"
-                                    fill // Fill the parent container
-                                    style={{ objectFit: 'cover' }} // Cover the entire area
+                                    fill
+                                    style={{ objectFit: 'cover' }}
                                     className="rounded-lg"
                                     unoptimized
                                 />
@@ -67,7 +67,7 @@ function MyWork() {
                         title="ongoing project"
                         href=""
                     >
-                        <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-full sm:w-[22rem] h-[20rem]">
+                        <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-[17rem] sm:w-[22rem] h-[20rem]">
                             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
                                 UNICONN
                             </h3>
@@ -78,10 +78,10 @@ function MyWork() {
                             </div>
                             <div className="flex flex-1 w-full rounded-lg mt-4 relative">
                                 <Image
-                                    src="/uniconn.gif" // Path to the GIF in the public directory
+                                    src="/uniconn.gif"
                                     alt="Uniconn GIF"
-                                    fill // Fill the parent container
-                                    style={{ objectFit: 'cover' }} // Cover the entire area
+                                    fill
+                                    style={{ objectFit: 'cover' }}
                                     className="rounded-lg"
                                     unoptimized
                                 />
@@ -93,7 +93,7 @@ function MyWork() {
                         title="/linkedin.com/posts/chamathishanka"
                         href="https://www.linkedin.com/posts/chamathishanka_innovation-teamwork-exmo2023-activity-7239995737478959104-RqMC?utm_source=share&utm_medium=member_desktop"
                     >
-                        <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-full sm:w-[22rem] h-[20rem]">
+                        <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-[17rem] sm:w-[22rem] h-[20rem]">
                             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
                                 AUTOMATED BEVERAGE MIXER
                             </h3>
@@ -105,10 +105,10 @@ function MyWork() {
                             </div>
                             <div className="flex flex-1 w-full rounded-lg mt-4 relative">
                                 <Image
-                                    src="/hardware.gif" // Path to the GIF in the public directory
+                                    src="/hardware.gif"
                                     alt="Hardware GIF"
-                                    fill // Fill the parent container
-                                    style={{ objectFit: 'cover' }} // Cover the entire area
+                                    fill
+                                    style={{ objectFit: 'cover' }}
                                     className="rounded-lg"
                                     unoptimized
                                 />

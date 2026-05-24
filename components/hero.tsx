@@ -52,7 +52,7 @@ const Hero = () => {
                     transition={{ duration: 6, ease: "easeInOut" }}
                 >
                     <div className="relative z-10">
-                        <Image src="https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/mypro.png?alt=media"
+                        <Image src="/mypro.png"
                             alt="Chamath Ishanka" width={192 * 1.5} height={108 * 1.5} className="object-cover" />
                     </div>
                     <TypewriterEffectSmooth words={words} />

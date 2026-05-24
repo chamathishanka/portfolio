@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { useMotionValueEvent, useScroll } from "framer-motion";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const StickyScroll = ({
@@ -15,110 +14,98 @@ export const StickyScroll = ({
     }[];
     contentClassName?: string;
 }) => {
-    const [activeCard, setActiveCard] = React.useState(0);
-    const ref = useRef<any>(null);
-    const { scrollYProgress } = useScroll({
-        // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-        // target: ref
-        container: ref,
-        offset: ["start start", "end start"],
-    });
+    const [activeCard, setActiveCard] = useState(0);
+    const [paused, setPaused] = useState(false);
+    const resumeTimer = useRef<ReturnType<typeof setTimeout>>();
     const cardLength = content.length;
 
-    useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        const cardsBreakpoints = content.map((_, index) => index / cardLength);
-        const closestBreakpointIndex = cardsBreakpoints.reduce(
-            (acc, breakpoint, index) => {
-                const distance = Math.abs(latest - breakpoint);
-                if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
-                    return index;
-                }
-                return acc;
-            },
-            0
-        );
-        setActiveCard(closestBreakpointIndex);
-    });
+    const linearGradients = [
+        "linear-gradient(to bottom right, rgba(6, 182, 212, 0.8), rgba(16, 185, 129, 0.8))",
+        "linear-gradient(to bottom right, rgba(236, 72, 153, 0.8), rgba(79, 70, 229, 0.8))",
+        "linear-gradient(to bottom right, rgba(249, 115, 22, 0.8), rgba(234, 179, 8, 0.8))",
+    ];
 
     const backgroundColors = [
-        "rgba(15, 23, 42, 0.5)", // var(--slate-900) with 50% opacity
-        "rgba(0, 0, 0, 0.5)", // var(--black) with 50% opacity
-        "rgba(38, 38, 38, 0.5)", // var(--neutral-900) with 50% opacity
-    ];
-    const linearGradients = [
-        "linear-gradient(to bottom right, rgba(6, 182, 212, 0.8), rgba(16, 185, 129, 0.8))", // var(--cyan-500) and var(--emerald-500) with 80% opacity
-        "linear-gradient(to bottom right, rgba(236, 72, 153, 0.8), rgba(79, 70, 229, 0.8))", // var(--pink-500) and var(--indigo-500) with 80% opacity
-        "linear-gradient(to bottom right, rgba(249, 115, 22, 0.8), rgba(234, 179, 8, 0.8))", // var(--orange-500) and var(--yellow-500) with 80% opacity
+        "rgba(15, 23, 42, 0.5)",
+        "rgba(0, 0, 0, 0.5)",
+        "rgba(38, 38, 38, 0.5)",
     ];
 
-    const [backgroundGradient, setBackgroundGradient] = useState(
-        linearGradients[0]
-    );
-
     useEffect(() => {
-        setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-    }, [activeCard]);
+        if (paused) return;
+        const id = setInterval(() => {
+            setActiveCard((p) => (p + 1) % cardLength);
+        }, 4000);
+        return () => clearInterval(id);
+    }, [paused, cardLength]);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (ref.current) {
-                ref.current.scrollBy({
-                    top: 1, // Increase the scroll speed
-                    behavior: "smooth",
-                });
-            }
-        }, 50); // Adjust the interval time as needed
-
-        return () => clearInterval(interval);
-    }, []);
+    const goTo = (i: number) => {
+        setPaused(true);
+        setActiveCard(i);
+        clearTimeout(resumeTimer.current);
+        resumeTimer.current = setTimeout(() => setPaused(false), 5000);
+    };
 
     return (
         <motion.div
-            animate={{
-                backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-            }}
-            className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-[40px] p-10 scrollbar-hide"
-            ref={ref}
+            animate={{ backgroundColor: backgroundColors[activeCard % backgroundColors.length] }}
+            className="rounded-3xl px-8 py-8 md:px-12 md:py-10"
+            onMouseEnter={() => { clearTimeout(resumeTimer.current); setPaused(true); }}
+            onMouseLeave={() => setPaused(false)}
         >
-            <div className="div relative flex items-start px-4">
-                <div className="max-w-2xl">
-                    {content.map((item, index) => (
-                        <div key={item.title + index} className="my-20">
-                            <motion.h2
-                                initial={{
-                                    opacity: 0,
-                                }}
-                                animate={{
-                                    opacity: activeCard === index ? 1 : 0.3,
-                                }}
-                                className="text-2xl font-bold text-slate-100"
-                            >
-                                {item.title}
-                            </motion.h2>
-                            <motion.p
-                                initial={{
-                                    opacity: 0,
-                                }}
-                                animate={{
-                                    opacity: activeCard === index ? 1 : 0.3,
-                                }}
-                                className="text-kg text-slate-300 max-w-sm mt-10"
-                            >
-                                {item.description}
-                            </motion.p>
-                        </div>
-                    ))}
-                    <div className="h-40" />
+            <div className="flex flex-row items-center gap-8 md:gap-12 min-h-[14rem]">
+                {/* Text */}
+                <div className="flex-1 min-w-0 flex flex-col justify-center">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeCard}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -12 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <h2 className="text-xl md:text-2xl font-bold text-slate-100 mb-3">
+                                {content[activeCard].title}
+                            </h2>
+                            <p className="text-sm md:text-base text-slate-300 leading-relaxed">
+                                {content[activeCard].description}
+                            </p>
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
+
+                {/* Image */}
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={activeCard}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.3 }}
+                        style={{ background: linearGradients[activeCard % linearGradients.length] }}
+                        className={cn(
+                            "hidden sm:block h-48 w-64 md:h-56 md:w-80 rounded-2xl overflow-hidden flex-shrink-0",
+                            contentClassName
+                        )}
+                    >
+                        {content[activeCard].content ?? null}
+                    </motion.div>
+                </AnimatePresence>
             </div>
-            <div
-                style={{ background: backgroundGradient }}
-                className={cn(
-                    "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
-                    contentClassName
-                )}
-            >
-                {content[activeCard].content ?? null}
+
+            {/* Dots */}
+            <div className="flex items-center justify-center gap-2 mt-6">
+                {content.map((item, i) => (
+                    <button
+                        key={item.title}
+                        onClick={() => goTo(i)}
+                        className={cn(
+                            "h-1.5 rounded-full transition-all duration-300",
+                            i === activeCard ? "bg-white w-6" : "bg-slate-600 hover:bg-slate-400 w-1.5"
+                        )}
+                        aria-label={`Go to slide ${i + 1}`}
+                    />
+                ))}
             </div>
         </motion.div>
     );

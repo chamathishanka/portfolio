@@ -38,7 +38,7 @@ const content = [
         description: "Hi there! I’m Chamath Ishanka, an enthusiastic IT student with a passion for web development and exploring the creative side of the IT industry. Currently pursuing my BSc in Information Technology at the University of Moratuwa, I am dedicated to building innovative solutions that make technology more accessible and engaging.",
         content: (
             <Image
-                src="https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/uom.jpg?alt=media"
+                src="/uom.jpg"
                 width={300}
                 height={300}
                 className="h-full w-full object-cover"
@@ -51,7 +51,7 @@ const content = [
         description: "My goal is to grow as a Software Engineer and make a positive impact in the tech world. I’m particularly interested in blending technical expertise with creativity, developing solutions that are not only functional but also inspiring and user-friendly.",
         content: (
             <Image
-                src="https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/software.jpg?alt=media"
+                src="/coding.jpg"
                 width={300}
                 height={300}
                 className="h-full w-full object-cover"
@@ -64,7 +64,7 @@ const content = [
         description: "When I’m not coding, you can find me producing music, traveling to new places, reading, or enjoying creative pursuits—whether it's making art, watching films, or exploring new forms of expression. I love exploring new technologies and constantly pushing myself to learn and create more.",
         content: (
             <Image
-                src="https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/prod.jpg?alt=media"
+                src="/fl.jpg"
                 width={300}
                 height={300}
                 className="h-full w-full object-cover"

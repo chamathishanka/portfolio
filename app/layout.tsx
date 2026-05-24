@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <link
           rel="icon"
-          href="https://firebasestorage.googleapis.com/v0/b/portfolio-757c2.appspot.com/o/mypro.png?alt=media"
+          href="/mypro.png"
           type="image/png"
         />
       </head>
